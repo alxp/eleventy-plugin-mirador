@@ -9,6 +9,18 @@ This is a plugin for [Eleventy](https://www.11ty.dev/) which instantiates a Mira
 
 ## Setup
 
+Add the plugin to your Eleventy project:
+
+I haven't submitted this project to npm yet
+so for now you can require it using
+the github shorthand in your package.json:
+
+```json
+  "dependencies": {
+    ...
+    "eleventy-plugin-mirador": "github:alxp/eleventy-plugin-mirador#main",
+```
+
 Then add it to your [Eleventy config](https://www.11ty.dev/docs/config/) file:
 
 ```js
@@ -22,7 +34,7 @@ module.exports = function(eleventyConfig) {
 ```
 
 To embed a Mirador viewer onto any Markdown page, use the [shortcode](https://www.11ty.dev/docs/shortcodes/) `mirador` and
-supply an id string and manifest URL URL as parameters
+supply an id string and manifest URL as parameters
 
 ### Markdown example:
 
