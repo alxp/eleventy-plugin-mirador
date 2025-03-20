@@ -4,14 +4,14 @@ module.exports = async (id, manifestUrl, config) => {
     const appScriptTag = `<script src="${config.miradorAppUrl}"></script>`;
     const wrapperDivTag = `<div id="box" style="position: relative;">
     <div id="bounding-box" style="height:800px;"></div>
-    <div id="${config.id}"></div></div>`;
+    <div id="${id}"></div></div>`;
 
 const windowConfig = JSON.stringify(config.window);
 
     const scriptTag =`
 <script type="text/javascript">
     var mirador = Mirador.viewer({
-      "id": "${config.id}",
+      "id": "${id}",
       "manifests": {
         "${manifestUrl}": {
           "provider": "${config.provider}"

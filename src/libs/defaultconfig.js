@@ -3,11 +3,7 @@ module.exports = {
     id: "my-mirador",
     provider: "Eleventy",
     window: {
-        textOverlay: {
-            enabled: true,
-            selectable: true,
-            visible: false
-        },
+
     },
     windows: [
         {

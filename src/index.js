@@ -8,8 +8,8 @@ module.exports = (eleventyConfig, options = {}) => {
     const config = deepmerge(defaults, options);
 
 
-    eleventyConfig.addAsyncShortcode('mirador', async (manifestUrl) => {
-        return await embed('my-mirador', manifestUrl, config);
+    eleventyConfig.addAsyncShortcode('mirador', async (id, manifestUrl) => {
+        return await embed(id, manifestUrl, config);
     });
 
 };
