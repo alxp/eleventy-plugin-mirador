@@ -1,0 +1,42 @@
+{
+  "name": "eleventy-plugin-mirador",
+  "version": "0.0.1",
+  "description": "11ty plugin for embedding the Mirador image viewer.",
+  "main": "src/index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint src --ext .js",
+    "lint:fix": "eslint src --fix --ext .js",
+    "test": "jest --config jest.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alxp/eleventy-plugin-mirador.git"
+  },
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "eleventy-plugin",
+    "mirador"
+  ],
+  "author": "Alexander O'Neill",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alxp/eleventy-plugin-mirador/issues"
+  },
+  "homepage": "https://github.com/alxp/eleventy-plugin-mirador/#readme",
+  "devDependencies": {
+    "eslint": "8.56.0",
+    "eslint-plugin-jest": "27.9.0",
+    "jest": "29.7.0",
+    "prettier": "3.2.5"
+  },
+  "files": [
+    "src/index.js",
+    "src/libs/**/*"
+  ],
+  "dependencies": {
+    "deepmerge": "^4.3.1",
+    "string-replace-async": "^2.0.0"
+  }
+}
