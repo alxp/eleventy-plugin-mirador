@@ -2,8 +2,9 @@
 
 11ty plugin for embedding a [Mirador](https://projectmirador.org) IIIF viewer app.
 
-## Getting started
+Developed as part of the [Islandty](https://github.com/alxp/islandty) project.
 
+## Getting started
 
 This is a plugin for [Eleventy](https://www.11ty.dev/) which instantiates a Mirador viewer for the given manifest.
 
@@ -30,6 +31,7 @@ module.exports = function(eleventyConfig) {
     ...
     eleventyConfig.addPlugin(embedMirador);
     ...
+
 };
 ```
 
@@ -50,61 +52,36 @@ Here is Mirador with an example IIIF manifest from Harvard:
 
 ## Advanced usage
 
+
 ### Configurations
+
 The following optional configurations can be used to alter the behaviour of this plugin. To change the configuration, set the target config object when adding the plugin in your eleventy config:
 
 ```js
 eleventyConfig.addPlugin(embedMirador, {
-  miradorAppUrl: "https://roblib.github.io/mirador-integration-islandora/islandora-mirador-0.1.0.js",
-
-    provider: "Eleventy",
-    window: {
-
-    },
-    windows: [
-        {
-            canvasIndex: 0,
-            thumbnailNavigationPosition: "far-bottom"
-        }
-    ]
-
+  miradorAppUrl: "https://unpkg.com/mirador@latest/dist/mirador.min.js",
+  canvasIdPattern: "{manifestUrl}/canvas/{canvasIndex}",
+  window: {
+    sideBarPanel: 'info',
+  },
+  windows: [
+    {
+      thumbnailNavigationPosition: "far-bottom"
+    }
+  ]
 });
 ```
 
-The window and windows keys get passed directly to the Mirador
-instantiation Javascript function.
+The `window` and `windows` keys get passed directly to the Mirador instantiation JavaScript function.
+Currently this plugin assumes only a single manifest is loaded in a given instance.
 
-Currently this plugin assumes only a single manifest is loaded in
-a given instance.
+To see the available configuration options you can go to https://github.com/ProjectMirador/mirador/blob/main/src/config/settings.js.
 
-To see the available configuration options
-you can go to https://github.com/ProjectMirador/mirador/blob/main/src/config/settings.js.
-They are not otherwise very well-documented as of this
-writing.
+* `miradorAppUrl` — Where the browser will load the Mirador app from. Defaults to the official Mirador unpkg CDN URL.
 
-* miradorAppUrl
-  Where the browser wil load the Mirador app instance from.
-  The default option is to use the Mirador instance
-  compiled for the [Islandora](https://islandora.ca/) project
-  hosted at https://github.com/roblib/mirador-integration-islandora.
-
-  This app instance is compiled with the following plugins:
-  - Embedded Text
-  - Image Tools
-  Which can be enabled in this plugin.
-  For example, to enable the embedded text plugin, supply
-  the following config to the plugin:
-
-```js
-eleventyConfig.addPlugin(miradorPlugin, {window: {
-    textOverlay: {
-      enabled: true,
-      selectable: true,
-      visible: false
-    },
-}});
-
-```
+* `canvasIdPattern` — A string pattern for constructing canvas IDs from the `?page=N` query parameter.
+  `{manifestUrl}` and `{canvasIndex}` are replaced at runtime. Defaults to `"{manifestUrl}/canvas/{canvasIndex}"`,
+  which matches the convention used by biiif and many other IIIF manifest generators.
 
 ## Contributing
 
@@ -115,3 +92,7 @@ Feel free to check [issues page](https://github.com/alxp/eleventy-plugin-mirador
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE.md)
+
+##  Maintainer
+
+Alexander O'Neill - https://github.com/alxp

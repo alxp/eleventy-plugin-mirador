@@ -1,6 +1,6 @@
 {
   "name": "eleventy-plugin-mirador",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "11ty plugin for embedding the Mirador image viewer.",
   "main": "src/index.js",
   "scripts": {
@@ -35,8 +35,5 @@
     "src/index.js",
     "src/libs/**/*"
   ],
-  "dependencies": {
-    "deepmerge": "^4.3.1",
-    "string-replace-async": "^2.0.0"
-  }
+  "dependencies": {}
 }
