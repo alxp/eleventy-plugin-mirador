@@ -37,12 +37,26 @@ supply an id string and manifest URL as parameters
 ```markdown
 Here is Mirador with an example IIIF manifest from Harvard:
 
-{% mirador "my-mirador","https://iiif.lib.harvard.edu/manifests/drs:48309543" %}
+{% mirador "my-mirador","https://mps.lib.harvard.edu/iiif/2/URN-3:FHCL.HOUGH:12007389" %}
 
 ```
 
 ### Rendered result
 ![Screenshot of Mirador with sample IIIF manifest](/docs/eleventy-plugin-mirador_screenshot_1.png)
+
+## Demo
+
+To run the demo locally:
+
+```bash
+git clone https://github.com/alxp/eleventy-plugin-mirador.git
+cd eleventy-plugin-mirador
+npm install
+npm run demo
+```
+
+This builds a minimal Eleventy site and serves it at `http://localhost:8080`, with a Mirador viewer
+embedded using the same IIIF manifest shown in the Markdown example above.
 
 ## Advanced usage
 
@@ -89,4 +103,4 @@ Feel free to check [issues page](https://github.com/alxp/eleventy-plugin-mirador
 
 ##  Maintainer
 
-Alexander O'Neill - https://github.com/alxp
+Alexander O'Neill - https://github.com/alxp / https://alxp.ca

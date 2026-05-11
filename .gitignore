@@ -125,6 +125,9 @@ dist
 # TernJS port file
 .tern-port
 
+# Demo build output
+demo/_site
+
 # Claude Code
 .claude/
 
