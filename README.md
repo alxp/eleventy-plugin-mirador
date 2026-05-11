@@ -12,14 +12,8 @@ This is a plugin for [Eleventy](https://www.11ty.dev/) which instantiates a Mira
 
 Add the plugin to your Eleventy project:
 
-I haven't submitted this project to npm yet
-so for now you can require it using
-the github shorthand in your package.json:
-
-```json
-  "dependencies": {
-    ...
-    "eleventy-plugin-mirador": "github:alxp/eleventy-plugin-mirador#main",
+```bash
+npm install eleventy-plugin-mirador
 ```
 
 Then add it to your [Eleventy config](https://www.11ty.dev/docs/config/) file:
@@ -91,7 +85,7 @@ Feel free to check [issues page](https://github.com/alxp/eleventy-plugin-mirador
 
 ## License
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 ##  Maintainer
 
