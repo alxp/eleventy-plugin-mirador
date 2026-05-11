@@ -2,7 +2,6 @@
   "name": "eleventy-plugin-mirador",
   "version": "2.0.1",
   "description": "11ty plugin for embedding the Mirador image viewer.",
-  "type": "module",
   "main": "src/index.js",
   "scripts": {
     "format": "prettier --write \"src/**/*.js\"",
